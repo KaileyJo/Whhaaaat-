@@ -3,10 +3,6 @@
 	border: 1px solid gray;
 }
 
-.inline {
-	display: inline;
-}
-
 #monthlyExpenses {
 	font-weight: 600;
 	font-size: larger;
