@@ -1,0 +1,17 @@
+.container {
+	padding: 20px;
+	border: 1px solid gray;
+}
+
+.inline {
+	display: inline;
+}
+
+#monthlyExpenses {
+	font-weight: 600;
+	font-size: larger;
+}
+
+.inactive {
+	color: #a9a9a9;
+}
