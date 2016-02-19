@@ -47,13 +47,12 @@ function postEmployee() {
 function appendEmployee(info) {
 	$('#container').empty();
 	for (var i = 0; i < info.length; i++) {
-		$('#container').append('<div></div>');
+		$('#container').append('<div class="employeeInformations"></div>');
 		var $el = $('#container').children().last();
-		$el.append('<p>' + info[i].first_name + '</p>');
-		$el.append('<p>' + info[i].last_name + '</p>');
-		$el.append('<p>' + info[i].emp_id + '</p>');
-		$el.append('<p>' + info[i].job_title + '</p>');
-		$el.append('<p class="salary">' + info[i].emp_salary + '</p>');
+		$el.append('<p>Employee: ' + info[i].first_name + ' ' + info[i].last_name + '</p>');
+		$el.append('<p>ID: ' + info[i].emp_id + '</p>');
+		$el.append('<p>Title: ' + info[i].job_title + '</p>');
+		$el.append('<p> Salary: $<span class="salary">' + info[i].emp_salary + '</span></p>');
 		$el.append('<button class="deactivate">Deactivate Employee</button>');
 		combinedSalary += Number(info[i].emp_salary);
 		totalToMonthly();
@@ -62,7 +61,7 @@ function appendEmployee(info) {
 
 function deactivate() {
 	var $div = $(this).parent();
-	var $salary = $div.children('.salary').text();
+	var $salary = $div.find('.salary').text();
 	$div.toggleClass('inactive');
 	$div.append('<button class="activate">Activate Employee</button>');
 	combinedSalary -= Number($salary);
@@ -72,7 +71,7 @@ function deactivate() {
 
 function activate() {
 	var $div = $(this).parent();
-	var $salary = $div.children('.salary').text();
+	var $salary = $div.find('.salary').text();
 	$div.toggleClass('inactive');
 	$div.append('<button class="deactivate">Deactivate Employee</button>');
 	$(this).remove();

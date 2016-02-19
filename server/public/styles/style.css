@@ -15,3 +15,10 @@
 .inactive {
 	color: #a9a9a9;
 }
+
+.employeeInformations {
+	display: inline;
+	float: left;
+	width: 300px;
+	height: 200px;
+}
